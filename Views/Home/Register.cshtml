@@ -1,0 +1,44 @@
+﻿@model Login_Register.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <div class="col-8">
+        <h2>@ViewData["Title"]</h2>
+        <form asp-controller="Home" asp-action="Register" method="post">
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="FirstName" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="FirstName" class="form-control d-inline-block col-8 m-auto" placeholder="Enter First Name" aria-label="Enter First Name" />
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="LastName" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="LastName" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Last Name" aria-label="Enter Last Name" />
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="Email" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="Email" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Email" aria-label="Enter Email" />
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="Password" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="Password" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Password" aria-label="Enter Password" />
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="PasswordConfirmation" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="PasswordConfirmation" type="password" class="form-control d-inline-block col-8 m-auto" placeholder="Confirm Password" aria-label="Confirm Password" />
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<button class="btn btn-dark" type="submit">Create new User</button>
+	    	</div>
+        </form>
+    </div>
+    <div id="err" class="col-4 mt-5">
+        <span asp-validation-for="FirstName"></span>
+        <span asp-validation-for="LastName"></span>
+        <span asp-validation-for="Email"></span>
+        <span asp-validation-for="Password"></span>
+        <span asp-validation-for="PasswordConfirmation"></span>
+        <span asp-validation-for="Unique"></span>
+    </div>
+</div>
